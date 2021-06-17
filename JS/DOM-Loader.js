@@ -1,32 +1,31 @@
 $( document ).ready(function() {
     alert("loading...");
+    getMovies()
 });
 
-function getMovies(data) {
-    $('#movie-list').append(`
-<h3>${data[0].title}(${data[0].year})</h3>
+function buildMovies(data) {
+    $('#movie-list').empty()
+  data.forEach(function (movie) {
+      if (!movie.title){
+          return
+      }
+      $('#movie-list').append(`
+<h3>${movie.title}(${movie.year})</h3>
 <p>
-rating: ${data[0].rating}<br><br> plot: <br>${data[0].plot}
+rating: ${movie.rating}<br><br> plot: <br>${movie.plot}
 </p>
 <hr>
-<h3>${data[1].title}(${data[1].year})</h3>
-<p>
-rating: ${data[1].rating}<br><br> plot: <br>${data[1].plot}
-</p>
-<hr>
-<h3>${data[2].title}(${data[2].year})</h3>
-<p>
-rating: ${data[2].rating}<br><br> plot: <br>${data[2].plot}
-</p>
-<hr>
-<h3>${data[3].title}(${data[3].year})</h3>
-<p>
-rating: ${data[3].rating}<br><br> plot: <br>${data[3].plot}
-</p>
-
-
-
-
-
 `)
+  })
+
 }
+
+$('#button').click(function() {
+    const reviewObj = {
+        title: $('#title').val(),
+        rating: $('#rating').val(),
+    };
+    console.log(reviewObj)
+    addMovie(reviewObj);
+});
+
