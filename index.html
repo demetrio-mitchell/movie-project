@@ -7,15 +7,21 @@
         <title>Title</title>
     </head>
     <body>
-        <div id="movie-list">
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand nav-text" href="#">
+                <img src="img/movie2.jpeg"
+                     width="30" height="30" class="d-inline-block align-top" alt="">
+                Movie List
+            </a>
+        </nav>
+        <div class="container">
+            <div class="row d-flex justify-content-around mt-3" id="movie-list">
 
-        </div>
-        <div id="new-movie">
-
-
+            </div>
         </div>
         <div id="modal">
-            <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -41,33 +47,56 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary button-change" id="save-btn">Save changes</button>
+                            <button type="button" class="btn btn-primary button-change" id="save-btn">Save changes
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <hr>
-        <h2>Add A Movie</h2>
-        <p id="Data-test"></p>
-        <form>
-            <label for="title">Movie Title:</label><br>
-            <input type="text" id="title" name="title" required>
-            <br>
-            <label for="year">Year Movie was Released:</label><br>
-            <input type="text" id="year" name="year" required>
-            <br>
-            <label for="rating">Rating:</label><br>
-            <input type="text" id="rating" name="rating" required>
-            <br>
-            <label for="plot">Plot:</label><br>
-            <input type="text" id="plot" name="plot" required>
-            <br>
-            <button type="button" id="button">ADD</button>
-        </form>
-        <hr>
-<!--        <script src="libraries/jquery-2.2.4.js"></script>-->
-        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+        <div class="d-flex justify-content-around">
+            <div class="w-75">
+                <h2>Add A Movie</h2>
+                <form>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Movie Title: </span>
+                        </div>
+                        <input type="text" class="form-control" id="title" placeholder="Pirates of the Caribbean"
+                               aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon2">Year: </span>
+                        </div>
+                        <input type="text" class="form-control" id="year" placeholder="2009" aria-label="Username"
+                               aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon3">Rating: </span>
+                        </div>
+                        <input type="text" class="form-control" id="rating" placeholder="5" aria-label="Username"
+                               aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon4">Plot: </span>
+                        </div>
+                        <input type="text" class="form-control" id="plot"
+                               placeholder="Pirates sail the seas in search of a magical treasure..."
+                               aria-label="Username"
+                               aria-describedby="basic-addon1">
+                    </div>
+                    <button type="button" class="btn btn-primary" id="button">ADD</button>
+                </form>
+            </div>
+        </div>
+        <!--        <script src="libraries/jquery-2.2.4.js"></script>-->
+        <script src="https://code.jquery.com/jquery-3.5.1.js"
+                integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
         <script src="JS/DOM-Loader.js"></script>
         <script src="JS/Movie-utils.js"></script>
