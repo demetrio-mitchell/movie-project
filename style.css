@@ -1,8 +1,33 @@
-body{
-    background-image:url("");
-
+body {
+    background: cyan; /* fallback color */
+    background: linear-gradient(90deg, #190061 0%, #3500D3 100%);
 }
 
-.nav-text{
-    align-content: center;
+.btn-primary {
+    background-color: #282828 !important;
+    border-color: #282828 !important;
+}
+
+#add-movie-title {
+    color: white;
+}
+
+#hr {
+    background-color: white;
+}
+
+.navbar {
+    background-color: #282828 !important;
+}
+
+#nav-text {
+    color: white;
+}
+
+.back {
+    background-color: #0C0032;
+}
+
+.card-text-color {
+    color: white;
 }

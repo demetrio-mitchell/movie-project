@@ -1,8 +1,9 @@
 $(document).ready(function () {
-    alert("loading...");
+    $("#loading").hide()
     getMovies()
 });
 
+//*building the movies onto the screen*
 function buildMovies(data) {
     $('#movie-list').empty()
     data.forEach(function (movie) {
@@ -12,11 +13,11 @@ function buildMovies(data) {
         $('#movie-list').append(`
          <div class="card col-md-5 mb-3 px-0" style="width: 18rem;">
             <img src="">
-            <div class="card-body">
-                <h5 class="card-title"><span id="title${movie.id}">${movie.title}</span>(<span id="year${movie.id}">${movie.year}</span>)</h5>
+            <div class="card-body back">
+                <h5 class="card-title card-text-color"><span id="title${movie.id}">${movie.title}</span>(<span id="year${movie.id}">${movie.year}</span>)</h5>
                 <img src="img/poster${movie.id}.jpg" alt="img" width="125" height="175">
-                <p class="card-text">rating:<span id="rating${movie.id}">${movie.rating}</span><br>plot: <br><span id="plot${movie.id}">${movie.plot}</span></p>
-                <button type="button" class="btn btn-primary test" onclick="$('#editModal').show()" data-toggle="modal" data-id="${movie.id}" data-target="#editModal" id="${movie.id}">Edit</button>
+                <p class="card-text card-text-color">rating:<span id="rating${movie.id}">${movie.rating}</span><br>plot: <br><span id="plot${movie.id}">${movie.plot}</span></p>
+                <button type="button" class="btn btn-primary" onclick="$('#editModal').show()" data-toggle="modal" data-id="${movie.id}" data-target="#editModal" id="${movie.id}">Edit</button>
                 <button type="button" class="btn btn-primary" data-value="${movie.id}" id="delete-${movie.id}">Delete</button>
             </div> 
         </div>
@@ -25,7 +26,7 @@ function buildMovies(data) {
     })
 }
 
-// add a movie button
+// *add a movie button*
 $('#button').click(function () {
     const reviewObj = {
         title: $('#title').val(),
@@ -36,7 +37,7 @@ $('#button').click(function () {
     addMovie(reviewObj);
 });
 
-// saving changes button
+//*saving changes button*
 $("#save-btn").click(function () {
     const editObj = {
         title: $("#modal #title-change").val(),
@@ -45,13 +46,10 @@ $("#save-btn").click(function () {
         plot: $("#modal #plot-change").val()
     };
     editMovie(editObj, $("#save-btn").attr("data-id"));
-    // $('body').removeClass('modal-open');
-    // $('.modal-backdrop').remove();
-    // $("#modal").hide();
 })
 
 
-//modal info
+//*filling in the already existing data when editing the card*
 $('#modal').on('show.bs.modal', function (e) {
 
     let movieId = $(e.relatedTarget).data("id")
@@ -67,7 +65,7 @@ $('#modal').on('show.bs.modal', function (e) {
 
 });
 
-//delete button
+//*delete button*
 function deleteButton(id) {
     $(`#delete-${id}`).click(function () {
         console.log("this button is being clicked")
