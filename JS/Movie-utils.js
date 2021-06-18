@@ -27,7 +27,7 @@ function addMovie(reviewObj) {
 
 }
 
-function editMovie(editObj, id){
+function editMovie(editObj, id) {
 
     const url = `https://rigorous-outrageous-podium.glitch.me/movies/${id}`;
     const options = {
@@ -43,7 +43,7 @@ function editMovie(editObj, id){
         .catch(error => console.error(error)); /* handle errors */
 }
 
-function deleteMovie (id) {
+function deleteMovie(id) {
     const url = `https://rigorous-outrageous-podium.glitch.me/movies/${id}`;
     const deleteMethod = {
         method: 'DELETE', // Method itself
