@@ -10,11 +10,11 @@ function buildMovies(data) {
             return
         }
         $('#movie-list').append(`
-        <div id="movie${movie.id}"> <h3 id="title${movie.id}">${movie.title}</h3> <h3><span id="year${movie.id}">(${movie.year})</span></h3>
-            <p id="rating${movie.id}">
-                rating: ${movie.rating}
+        <div id="movie${movie.id}"> <h3 id="title${movie.id}">${movie.title}</h3> <h3>(<span id="year${movie.id}">${movie.year}</span>)</h3>
+            <p>
+                rating: <span id="rating${movie.id}">${movie.rating}</span>
             </p>
-            <p id="plot${movie.id}">plot: <br>${movie.plot}</p>
+            <p>plot: <br><span id="plot${movie.id}">${movie.plot}</span></p>
             <button type="button" class="btn btn-primary test" onclick="$('#editModal').show()" data-toggle="modal" data-id="${movie.id}" data-target="#editModal" id="${movie.id}">Edit</button>
            <button type="button" class="btn btn-primary" data-value="${movie.id}" id="delete-${movie.id}">Delete</button>
             <hr>
@@ -44,9 +44,9 @@ $("#save-btn").click(function () {
         plot: $("#modal #plot-change").val()
     };
     editMovie(editObj, $("#save-btn").attr("data-id"));
-    $('body').removeClass('modal-open');
-    $('.modal-backdrop').remove();
-    $("#modal").hide();
+    // $('body').removeClass('modal-open');
+    // $('.modal-backdrop').remove();
+    // $("#modal").hide();
 })
 
 
