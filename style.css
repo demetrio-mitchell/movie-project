@@ -31,3 +31,7 @@ body {
 .card-text-color {
     color: white;
 }
+
+.movie-card{
+    border-left: 16px !important;
+}
