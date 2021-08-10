@@ -1,5 +1,5 @@
 body {
-    background: cyan; /* fallback color */
+    background: cyan;
     background: linear-gradient(90deg, #190061 0%, #3500D3 100%);
 }
 
@@ -30,4 +30,12 @@ body {
 
 .card-text-color {
     color: white;
+}
+
+.movie-card{
+    border-left: 16px !important;
+}
+
+#loading{
+    color: white !important;
 }

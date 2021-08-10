@@ -11,7 +11,7 @@ function buildMovies(data) {
             return
         }
         $('#movie-list').append(`
-         <div class="card col-md-5 mb-3 px-0" style="width: 18rem;">
+         <div class="card col-md-5 mb-3 px-0" id="movie-card" style="width: 18rem;">
             <img src="">
             <div class="card-body back">
                 <h5 class="card-title card-text-color"><span id="title${movie.id}">${movie.title}</span>(<span id="year${movie.id}">${movie.year}</span>)</h5>
@@ -43,9 +43,10 @@ $("#save-btn").click(function () {
         title: $("#modal #title-change").val(),
         year: $("#modal #year-change").val(),
         rating: $("#modal #rating-change").val(),
-        plot: $("#modal #plot-change").val()
+        plot: $("#modal #plot-change").val(),
+        id: $("#save-btn").attr("data-id")
     };
-    editMovie(editObj, $("#save-btn").attr("data-id"));
+    editMovie(editObj);
 })
 
 
