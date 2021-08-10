@@ -1,6 +1,6 @@
 function getMovies() {
     $.ajax({
-        url: "https://rigorous-outrageous-podium.glitch.me/movies",
+        url: "http://localhost:8080/movies",
         type: "GET",
 
         success: function (data) {
@@ -11,14 +11,14 @@ function getMovies() {
 }
 
 function addMovie(reviewObj) {
-
-    const url = "https://rigorous-outrageous-podium.glitch.me/movies";
+    console.log(reviewObj);
+    const url = `http://localhost:8080/movies`;
     const options = {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(reviewObj),
+        body: JSON.stringify([reviewObj]),
     };
     fetch(url, options)
         .then(response => console.log(response))/* review was created successfully */
@@ -29,7 +29,7 @@ function addMovie(reviewObj) {
 
 function editMovie(editObj, id) {
 
-    const url = `https://rigorous-outrageous-podium.glitch.me/movies/${id}`;
+    const url = `http://localhost:8080/movies`;
     const options = {
         method: 'PUT',
         headers: {
@@ -44,12 +44,13 @@ function editMovie(editObj, id) {
 }
 
 function deleteMovie(id) {
-    const url = `https://rigorous-outrageous-podium.glitch.me/movies/${id}`;
+    const url = `http://localhost:8080/movies`;
     const deleteMethod = {
         method: 'DELETE', // Method itself
         headers: {
             'Content-type': 'application/json; charset=UTF-8' // Indicates the content
         },
+        body: id
     }
     fetch(url, deleteMethod)
         .then(data => console.log(data)) // Manipulate the data retrieved back, if we want to do something with it
